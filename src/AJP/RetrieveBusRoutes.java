@@ -18,18 +18,22 @@ public class RetrieveBusRoutes {
     // TODO Auto-generated method stub
 
     BufferedReader br = new BufferedReader(new FileReader("lta-bus_stop_codes.csv"));
-    int busStopCode = 0;
+    String busStopCode = null;
     String line =  null;
-    HashMap<Integer, String> BusStopInfo = new HashMap<Integer, String>();
-
+    HashMap<String, BusStopObj> BusStopInfo = new HashMap<String, BusStopObj>();
+    br.readLine(); // Read line once to skip the headers
     while((line=br.readLine())!=null){
         String str[] = line.split(",");
-        for(int i=1;i<str.length;i++){
-            String arr[] = str[i].split(":");
-            BusStopInfo.put(Integer, arr[]);
-        }
+        //int i = Integer.parseInt(str[0]);
+        String i = str[0];
+        BusStopObj bs = new BusStopObj(str[1], str[2]);
+        BusStopInfo.put(i, bs);
     }
-    System.out.println(BusStopInfo);
- }
+    //System.out.println(BusStopInfo);
+    for (String key : BusStopInfo.keySet()) {
+    System.out.println(key);
+    System.out.println(BusStopInfo.get(key).toString());
+}
+    }
     
 }
