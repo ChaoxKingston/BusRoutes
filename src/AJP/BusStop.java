@@ -14,18 +14,18 @@ public class BusStop {
     /** Private Variables created for BusStop object to cater for LTA bus stop
      *  codes
      */ 
-    private int busStopcode;
+    private String busStopcode;
     private String roadDesc;
     private String busStopDesc;
     
     /** Public Constructor for Bus Stop object */
-    public BusStop(int x, String y, String z) {
+    public BusStop(String x, String y, String z) {
         this.busStopcode = x;
         this.roadDesc = y;
         busStopDesc = z;
     }
     
-    public int getBusStopcode() {
+    public String getBusStopcode() {
         return busStopcode;
     }
     
