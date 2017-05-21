@@ -57,7 +57,13 @@ public class DataLoader {
                 int dir = Integer.parseInt(test[1]);
                 int routeSeq = Integer.parseInt(test[2]);
                 String busStopCode = test[3];
-                double distance = Double.parseDouble(test[4]);
+                double distance;
+                try {
+                    distance = Double.parseDouble(test[4]);
+                } catch (NumberFormatException ex) {
+                    distance = 0;
+                }
+
                 BusRoute busroutes = new BusRoute(svcNum, dir, routeSeq, busStopCode, distance);
                 busRouteInfo.put(busroutes.getSvcNum(), busroutes);
             }

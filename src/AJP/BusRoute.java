@@ -28,4 +28,20 @@ public class BusRoute {
     public String getSvcNum() {
         return svcNum;
     }
+    
+    public int getDir() {
+        return dir;
+    }
+    
+    public int getRouteSeq() {
+        return routeSeq;
+    }
+    
+    public String getBusStopCode() {
+        return busStopCode;
+    }
+    
+    public double getDistance() {
+        return distance;
+    }
 }
